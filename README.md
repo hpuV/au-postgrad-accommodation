@@ -40,9 +40,17 @@ npm install
 npm run dev        # http://127.0.0.1:5188/
 ```
 
-## Build and deploy
+## Deploy to GitHub Pages
 
-The site is fully static. Build it locally, then upload the whole `apps/room-viewer/dist/` folder to any static host.
+Every push to `main` builds the site and publishes it to GitHub Pages through [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The site is served at `https://<user>.github.io/<repo>/`. The workflow sets the base path from the repository name automatically.
+
+One-time setup: in the repository, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
+
+To redeploy without a new commit, open the **Actions** tab, choose **Deploy to GitHub Pages**, and click **Run workflow**.
+
+## Build manually
+
+The site is fully static. To host it somewhere else, build it locally, then upload the whole `apps/room-viewer/dist/` folder to any static host.
 
 Hosting at the root of a domain (Cloudflare Pages, Netlify, a custom domain):
 
@@ -55,6 +63,8 @@ Hosting under a sub-path, such as GitHub Pages at `https://<user>.github.io/au-p
 ```bash
 VIEWER_BASE=/au-postgrad-accommodation/ npm run build
 ```
+
+On Windows, Git Bash rewrites `/au-postgrad-accommodation/` into a Windows path, so prefix the command with `MSYS_NO_PATHCONV=1`. In PowerShell, use `$env:VIEWER_BASE="/au-postgrad-accommodation/"; npm run build`.
 
 Preview the production build locally:
 
