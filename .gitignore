@@ -1,0 +1,26 @@
+# Dependencies and build output (rebuild with npm install / npm run build)
+node_modules/
+apps/room-viewer/dist/
+*.tsbuildinfo
+
+# Logs and local environment
+*.log
+.env
+.env.*
+
+# Editors and OS
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Private capture data: the raw scan, posed photos and capture bundles stay in
+# the 3d-model-anything workspace and are never part of this public repo.
+data/demos/
+data/captures-in/
+data/web-assets/**/photos/
+data/web-assets/**/photos-extra/
+data/web-assets/**/scan.glb
+*.zip
