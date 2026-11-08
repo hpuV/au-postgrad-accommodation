@@ -1,8 +1,10 @@
-# USYD Postgrad Accommodation
+# AU Postgrad Accommodation
 
-An interactive 3D model of a University of Sydney postgraduate accommodation apartment, built with [Three.js](https://threejs.org/) and viewable in the browser.
+An interactive 3D model of a postgraduate accommodation apartment in Australia, built with [Three.js](https://threejs.org/) and viewable in the browser.
 
-The apartment was captured as a LiDAR scan with [3D Scanner App](https://3dscannerapp.com/), then rebuilt by hand as procedural geometry: walls, ceilings, windows, the open steel stair, the kitchen and bathroom fixtures, and the furniture. The scan and photos were used only as measurements and visual reference. They are not part of this repository and are not published.
+This is the apartment I lived in while I was a postgraduate student at the University of Sydney (USYD).
+
+The apartment was captured with an iPhone LiDAR scan, then rebuilt by hand as procedural geometry: walls, ceilings, windows, the open steel stair, the kitchen and bathroom fixtures, and the furniture. The scan and photos were used only as measurements and visual reference. They are not part of this repository and are not published.
 
 ## What's in the model
 
@@ -25,7 +27,7 @@ This project is built on [**3D Model Anything**](https://github.com/wesbos/3d-mo
 
 - Wes's own office model and its assets have been removed.
 - The Scan and Overlay views have been removed, because the raw scan is not published. Only Rebuilt and Wireframe remain.
-- The room module (`demos/usyd-postgrad-accom/`) is new and specific to this apartment.
+- The room module (`demos/au-postgrad-accom/`) is new and specific to this apartment.
 
 The original source code is MIT licensed. See [`LICENSE`](LICENSE), which must be kept with this code. The generic material textures in `data/web-assets/textures/` come from [Poly Haven](https://polyhaven.com/) and [ambientCG](https://ambientcg.com/) (CC0).
 
@@ -48,10 +50,10 @@ Hosting at the root of a domain (Cloudflare Pages, Netlify, a custom domain):
 npm run build
 ```
 
-Hosting under a sub-path, such as GitHub Pages at `https://<user>.github.io/usyd-postgrad-accommodation/`:
+Hosting under a sub-path, such as GitHub Pages at `https://<user>.github.io/au-postgrad-accommodation/`:
 
 ```bash
-VIEWER_BASE=/usyd-postgrad-accommodation/ npm run build
+VIEWER_BASE=/au-postgrad-accommodation/ npm run build
 ```
 
 Preview the production build locally:
@@ -69,5 +71,5 @@ npm run preview    # http://localhost:4173/
 | `apps/room-viewer/` | Viewer (`index.html`) and physics playground (`play.html`) |
 | `packages/room-runtime/` | Shared rendering, lighting, materials and wall helpers |
 | `packages/room-physics/` | Physics, player controller and object interaction (Rapier) |
-| `demos/usyd-postgrad-accom/` | The apartment model: shell, fixtures, furniture and materials |
+| `demos/au-postgrad-accom/` | The apartment model: shell, fixtures, furniture and materials |
 | `data/web-assets/` | Public textures, copied into `dist/` at build time |

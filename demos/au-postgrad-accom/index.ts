@@ -8,7 +8,7 @@ import { buildFurniture } from './furniture';
 import { ausMaterials, loadAusTextures } from './materials';
 
 /**
- * USYD postgraduate accommodation, rebuilt from a 3D Scanner App capture.
+ * Postgraduate accommodation in Australia, rebuilt from a 3D Scanner App capture.
  * Room coordinates: meters, floor y = 0, walls on X/Z.
  *
  *  - Living / dining / galley kitchen / entry hall, ceiling 2.38, open steel stair to the upper floor
@@ -18,11 +18,11 @@ import { ausMaterials, loadAusTextures } from './materials';
  * Public build: the raw scan and the reference photos are not published, so only the rebuilt
  * model (Rebuilt / Wireframe) is available.
  */
-const ID = 'usyd-postgrad-accom';
+const ID = 'au-postgrad-accom';
 
-export const usydPostgradAccom: RoomModule = {
+export const auPostgradAccom: RoomModule = {
   id: ID,
-  label: 'USYD Postgrad Accommodation',
+  label: 'AU Postgrad Accommodation',
   async build(): Promise<BuiltRoom> {
     await Promise.all([loadTextures(), loadAusTextures()]);
     const group = new THREE.Group();

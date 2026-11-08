@@ -7,12 +7,12 @@ import { materials as basePalette, mulberry32, textured } from '../../packages/r
  */
 let palette: ReturnType<typeof create> | undefined;
 const own = new Map<string, THREE.Texture>();
-/** Room-specific textures (data/web-assets/usyd-postgrad-accom/textures); call before ausMaterials(). */
+/** Room-specific textures (data/web-assets/au-postgrad-accom/textures); call before ausMaterials(). */
 export async function loadAusTextures() {
   const loader = new THREE.TextureLoader();
   await Promise.all(['floor_diff.jpg'].map(async (f) => {
     if (own.has(f)) return;
-    const t = await loader.loadAsync(`/usyd-postgrad-accom/textures/${f}`);
+    const t = await loader.loadAsync(`/au-postgrad-accom/textures/${f}`);
     t.colorSpace = THREE.SRGBColorSpace;
     t.wrapS = t.wrapT = THREE.RepeatWrapping;
     t.anisotropy = 8;
